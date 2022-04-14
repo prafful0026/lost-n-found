@@ -7,11 +7,11 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func getEnvVar(key string) string{
+func GetEnvVar(key string) string {
 
-	err:=godotenv.Load()
+	err := godotenv.Load()
 
-	if err!=nil {
+	if err != nil {
 		log.Fatal(envError)
 	}
 
