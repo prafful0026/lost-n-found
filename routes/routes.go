@@ -26,6 +26,6 @@ func NewRoutes(router *gin.Engine, client *mongo.Client) (*Routes, error) {
 func RegisterRoutes(routes *Routes) {
 	routes.pingRoutes()
 	routes.authRoutes()
-	// routes.postRoutes()
-	// routes.claimRoutes()
+	routes.postRoutes()
+	routes.claimRoutes()
 }
