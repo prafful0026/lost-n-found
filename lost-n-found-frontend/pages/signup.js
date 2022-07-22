@@ -4,12 +4,21 @@ import {useState} from 'react'
 import Logo from "../components/Logo";
 
 export default function Signup() {
+
+    // {
+    //     "firstName":"Prafful",
+    //     "lastName":"Agrawal",
+    //     "email":"avi@gmail.com",
+    //     "password":"abcd1234"
+    // }
+
     const initialState = {
         firstName: "",
         lastName: "",
         email: "",
         password: ""
     }
+    
     const [userInfo, setUserInfo] = useState(initialState)
     const handleSubmit = (e) => {
         e.preventDefault()
