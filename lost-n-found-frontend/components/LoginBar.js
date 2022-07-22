@@ -2,7 +2,7 @@ import Link from "next/link"
 
 function LoginBar() {
   return (
-    <div className="top-0 h-12 w-full space-x-4 border-b-[1px] border-black border-opacity-10 flex justify-center items-center">
+    <div className="top-0 p-2 w-full space-x-4 border-b-[1px] border-black border-opacity-10 flex justify-center items-center">
         <Link href="/login">
           <a className="text-primaryBlue">Login</a>
         </Link>

@@ -1,6 +1,8 @@
 import LoginBar from "../components/LoginBar"
 import Link from 'next/link'
 import {useState} from 'react'
+import BottomNav from "../components/BottomNav"
+import Logo from "../components/Logo"
 
 function Login() {
     const initialState = {
@@ -26,6 +28,7 @@ function Login() {
     return (
         <div className="text-center ">
             <LoginBar /> {/* If user is not signed up */}
+            <Logo />
             <div className="flex flex-col justify-center items-center my-20 px-8">
                 <h1 className="font-extrabold  text-4xl mb-8">Login</h1>
                 <form onSubmit={handleSubmit} className="space-y-3 flex flex-col items-center w-full ">
@@ -38,6 +41,7 @@ function Login() {
                     <a className="text-primaryBlue">Don{"'"}t have an account? Sign Up</a>
                 </Link>
             </div>
+            <BottomNav />
         </div>
     )
 }

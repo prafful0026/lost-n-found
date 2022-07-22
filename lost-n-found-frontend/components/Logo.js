@@ -1,6 +1,10 @@
+import Link from 'next/link' 
+
 function Logo() {
   return (
-    <h1 className="font-medium text-4xl my-2">L&F</h1>
+    <Link href='/' >
+      <a className="font-bold text-4xl m-2">L&F</a>
+    </Link>
   )
 }
 

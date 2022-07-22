@@ -5,9 +5,9 @@ import LoginBar from '../components/LoginBar'
 import Logo from '../components/Logo'
 import Footer from '../components/Footer'
 import { useState } from 'react/cjs/react.production.min'
+import BottomNav from '../components/BottomNav'
 
 export default function Home() {
-  const [name, setName] = useState
   return (
     <div>
       <Head>
@@ -19,7 +19,7 @@ export default function Home() {
         <LoginBar /> {/* If user is not signed up */}
         <Logo />
         <div className=' flex flex-col justify-center items-center space-y-4 my-24'>
-          <h1 className='text-4xl font-extrabold bg-gradient-to-r text-transparent bg-clip-text from-indigo-500 via-purple-500 to-pink-500'>Find the lost,<br />Help the losers</h1>
+          <h1 className='text-4xl font-extrabold primaryGradient text-transparent bg-clip-text '>Find the lost,<br />Help the losers</h1>
           <h2 className='font-bold text-2xl'>Lost & Found App</h2>
 
           <div className='flex space-x-3 px-8'>
@@ -45,6 +45,7 @@ export default function Home() {
             <p className='font-medium opacity-60 text-sm'>Found a lost item, but unable to find the owner? We will help you find the right owner of the item. You know, Helping others is good.</p>
           </div>
         </div>
+
         <Footer />
       </div>
     </div>

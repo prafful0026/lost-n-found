@@ -6,20 +6,27 @@
 
 @layer base {
   body {
-    @apply font-primary h-full;
+    @apply font-primary h-full flex-col items-center;
   }
   input {
     @apply focus-visible:outline-primaryBlue;
   }
-  button{
-    @apply focus-visible:outline-none;
+  textarea {
+    @apply focus-visible:outline-primaryBlue;
   }
-
-
+  button{
+    @apply focus-visible:outline-none cursor-pointer;
+  }
+  a{
+    @apply focus-visible:outline-none cursor-pointer;
+  }
 }
 
 @layer components {
   .btn {
     @apply py-1 px-3 rounded-md;
+  }
+  .primaryGradient {
+    @apply bg-gradient-to-r from-primaryBlue via-[#7EC1B7] to-[#7B53CF];
   }
 }
