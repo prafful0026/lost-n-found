@@ -12,8 +12,6 @@ func main() {
 	client := configs.ConnectDB()
 	defer configs.DisconnectDB(client)
 
-	router.Group(configs.BaseApiRoute)
-
 	newRoutes, _ := routes.NewRoutes(router, client)
 	routes.RegisterRoutes(newRoutes)
 
