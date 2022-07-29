@@ -19,6 +19,11 @@ type UserResponse struct {
 	Email     string             `json:"email" validate:"email,required"`
 	AuthToken string             `json:"authToken" validate:"required"`
 }
+type UserPostResponse struct {
+	Id        primitive.ObjectID `json:"id,omitempty" bson:"_id,omitempty"`
+	FirstName string             `json:"firstName" validate:"required"`
+	LastName  string             `json:"lastName"`
+}
 type PostResponse struct {
 	Id          primitive.ObjectID   `json:"id,omitempty" bson:"_id,omitempty"`
 	Title       string               `json:"title,omitempty" validate:"required"`
@@ -30,7 +35,7 @@ type PostResponse struct {
 	Status      string               `json:"status,omitempty" validate:"required,eq=LOST|eq=FOUND"`
 	Claims      []primitive.ObjectID `json:"claims"`
 	CreatedAt   time.Time            `json:"createdAt,omitempty"`
-	UserDetails UserResponse         `json:"userDetails,omitempty"`
+	UserDetails UserPostResponse     `json:"userDetails,omitempty"`
 }
 type ClaimResponse struct {
 	Id          primitive.ObjectID `json:"id,omitempty" bson:"_id"`
