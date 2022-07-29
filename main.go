@@ -18,7 +18,7 @@ func main() {
 	defer configs.DisconnectDB(client)
 
 	newRoutes, _ := routes.NewRoutes(router, client)
-	routes.RegisterRoutes(newRoutes)
+	newRoutes.RegisterRoutes()
 
 	router.Run(":3000")
 

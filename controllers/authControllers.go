@@ -69,21 +69,21 @@ func (cnt *Controllers) RegisterUser(ginCtx *gin.Context) {
 		throwError(http.StatusInternalServerError, ginCtx, err, "")
 		return
 	}
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
-		"id":  result.InsertedID,
-		"exp": time.Now().Add(time.Hour * 24 * 15).Unix(),
-	})
-	var (
-		mySigningKey = []byte(configs.GetEnvVar("JWT_PASSKEY"))
-	)
-	tokenStr, err := token.SignedString(mySigningKey)
+	// token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
+	// 	"id":  result.InsertedID,
+	// 	"exp": time.Now().Add(time.Hour * 24 * 15).Unix(),
+	// })
+	// var (
+	// 	mySigningKey = []byte(configs.GetEnvVar("JWT_PASSKEY"))
+	// )
+	// tokenStr, err := token.SignedString(mySigningKey)
 
-	if err != nil {
-		throwError(http.StatusInternalServerError, ginCtx, err, "")
-		return
-	}
+	// if err != nil {
+	// 	throwError(http.StatusInternalServerError, ginCtx, err, "")
+	// 	return
+	// }
 
-	ginCtx.JSON(http.StatusCreated, responses.HttpResponse{Status: http.StatusCreated, Message: "success", Data: map[string]interface{}{"data": result, "token": tokenStr}})
+	ginCtx.JSON(http.StatusCreated, responses.HttpResponse{Status: http.StatusCreated, Message: "success", Data: map[string]interface{}{"data": result}})
 }
 
 func (cnt *Controllers) WithAuth() gin.HandlerFunc {

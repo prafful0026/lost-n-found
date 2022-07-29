@@ -8,22 +8,22 @@ import (
 
 type Routes struct {
 	DB          *mongo.Client
-	Gin         *gin.Engine
+	Gin         *gin.RouterGroup
 	Controllers *controllers.Controllers
 }
 
 func NewRoutes(router *gin.Engine, client *mongo.Client) (*Routes, error) {
-
+	v1 := router.Group("/api/v1")
 	newControllers, _ := controllers.NewControllers(router, client)
 
 	return &Routes{
-		Gin:         router,
+		Gin:         v1,
 		DB:          client,
 		Controllers: newControllers,
 	}, nil
 }
 
-func RegisterRoutes(routes *Routes) {
+func (routes *Routes) RegisterRoutes() {
 	routes.pingRoutes()
 	routes.authRoutes()
 	routes.postRoutes()
