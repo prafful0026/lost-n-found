@@ -12,7 +12,7 @@ func main() {
 	router.Use(cors.New(cors.Config{
 		AllowOrigins: []string{"*"},
 		AllowMethods: []string{"POST", "PUT", "PATCH", "DELETE"},
-		AllowHeaders: []string{"Content-Type,access-control-allow-origin, access-control-allow-headers"},
+		AllowHeaders: []string{"Content-Type,access-control-allow-origin, access-control-allow-headers, Authorization"},
 	}))
 	client := configs.ConnectDB()
 	defer configs.DisconnectDB(client)
